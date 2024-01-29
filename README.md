@@ -20,7 +20,7 @@ Sigue estos pasos para replicar la aplicación en tu propio entorno:
 1. Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/statick88/chat_app
+git clone https://github.com/statick88/chat
 ```
 
 2. Instala las dependencias del proyecto utilizando npm o yarn:
