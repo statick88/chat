@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const MessageForm = ({ onSendMessage }) => {
@@ -11,7 +11,6 @@ const MessageForm = ({ onSendMessage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (message.trim() !== '') {
-      console.log('Message to send:', message); // Registrar el mensaje antes de enviarlo
       onSendMessage(message);
       setMessage('');
     } else {
@@ -19,11 +18,16 @@ const MessageForm = ({ onSendMessage }) => {
     }
   };
 
-
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={message} onChange={handleChange} />
-      <button type="submit">Enviar</button>
+    <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
+      <input
+        className="form-control mr-sm-2"
+        type="text"
+        value={message}
+        onChange={handleChange}
+        placeholder="Escribe tu mensaje aquí..."
+      />
+      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Enviar</button>
     </form>
   );
 };
